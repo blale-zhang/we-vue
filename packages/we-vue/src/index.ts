@@ -21,8 +21,7 @@ if (components) {
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-  // todo
-  // window.Vue.use()
+  window.Vue.use(WeVue)
 }
 
 export default WeVue

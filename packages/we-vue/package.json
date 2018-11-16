@@ -23,7 +23,7 @@
   "style": "lib/we-vue-css/index.css",
   "types": "types/index.d.ts",
   "scripts": {
-    "serve": "cross-env NODE_ENV=development webpack --config build/webpack.prod.conf.js --progress --hide-modules --watch",
+    "serve": "cross-env NODE_ENV=development webpack --config build/webpack.prod.conf.js --progress --hide-modules --colors --watch",
     "lint": "eslint --ext .js,.vue packages demo docs test/unit/specs",
     "lint:fix": "npm run lint -- --fix",
     "build": "concurrently \"yarn build:dist --no-progress\" \"yarn build:lib\" -n \"dist,lib\" --kill-others-on-fail -r",

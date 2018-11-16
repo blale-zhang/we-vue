@@ -12,10 +12,8 @@
 </template>
 
 <script lang="ts">
-
-import PopupMixin from '../mixins/popup'
-
 import Vue from 'vue'
+import PopupMixin from '../../mixins/popup'
 
 export default Vue.extend({
   name: 'wv-top-tips',
@@ -23,7 +21,10 @@ export default Vue.extend({
   mixins: [PopupMixin],
 
   props: {
-    message: String
+    message: {
+      type: String,
+      require: true
+    }
   }
 })
 </script>
