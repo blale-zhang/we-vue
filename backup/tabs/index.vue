@@ -40,7 +40,7 @@
 import { raf } from '../../utils/raf'
 import { on, off } from '../../utils/event'
 import scrollUtils from '../../utils/scroll'
-import Touch from '../../mixins/touch.ts'
+import Touch from '../../mixins/touch'
 
 import Vue from 'vue'
 

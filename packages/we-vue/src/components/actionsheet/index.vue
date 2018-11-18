@@ -65,13 +65,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-// import Themeable from '../../mixins/themeable'
-//
-// import mixins from '../../utils/mixins'
-//
-// export default mixins(
-//   Themeable
-// ).extend({
 
 export default Vue.extend({
   name: 'wv-actionsheet',
@@ -93,11 +86,9 @@ export default Vue.extend({
     value: Boolean
   },
 
-  data () {
-    return {
-      currentValue: this.value
-    }
-  },
+  data: vm => ({
+    currentValue: vm.value
+  }),
 
   watch: {
     currentValue (val): void {

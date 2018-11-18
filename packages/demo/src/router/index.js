@@ -33,7 +33,7 @@ const routes = registerRoute(Navs)
 
 routes.push({
   path: '/',
-  component: () => import('../views/index.vue'),
+  component: () => import(/* webpackChunkName: "index" */ '../views/index.vue'),
   name: 'index',
   meta: {
     title: 'WE-VUE',
@@ -43,7 +43,7 @@ routes.push({
 
 routes.push({
   path: '*',
-  component: () => import('../views/404.vue'),
+  component: () => import(/* webpackChunkName: "404" */ '../views/404.vue'),
   name: '404',
   meta: {
     title: '404 Not Found',

@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import FooterLink from './footer-link'
+import FooterLink from './footer-link.vue'
 import Themeable from '../../mixins/themeable'
 
 import mixins from '../../utils/mixins'

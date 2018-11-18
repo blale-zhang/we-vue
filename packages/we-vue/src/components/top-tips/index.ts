@@ -1,34 +1,36 @@
-import Vue, { PluginFunction } from 'vue'
+import Vue from 'vue'
 import TopTipsComponent from './top-tips.vue'
 import { isObj } from '../../utils'
 
 type TopTipsOptions = {
+  message: string,
   visible?: boolean,
   duration?: number
 }
 
-type TopTipsType = {
+type a = InstanceType<typeof TopTipsComponent>
+
+interface TopTipsType extends a {
   defaultOptions: TopTipsOptions,
   currentOptions: TopTipsOptions,
   close: Function,
   setDefaultOptions: Function,
-  allowMultiple: Function,
   resetDefaultOptions: Function,
-  install: PluginFunction<any>,
-  [key: string]: any,
+  [key: string]: any
 }
 
 const defaultOptions: TopTipsOptions = {
+  message: '',
   visible: true,
   duration: 3000
 }
 
-let instance
-let currentOptions = { ...defaultOptions }
+let instance: TopTipsType
+let currentOptions: TopTipsOptions = { ...defaultOptions }
 
-const parseOptions: object = (message: any) => (isObj(message) ? message : { message })
+const parseOptions: (message: string | object) => object = message => (isObj(message) ? <object>message : { message })
 
-const createInstance = () => {
+const createInstance: () => void = () => {
   instance = new (Vue.extend(TopTipsComponent))({
     el: document.createElement('div')
   })
@@ -40,7 +42,7 @@ const createInstance = () => {
   document.body.appendChild(instance.$el)
 }
 
-const TopTips: TopTipsType = options => {
+const TopTips: (options: TopTipsOptions | string) => TopTipsType = options => {
   options = {
     ...currentOptions,
     ...parseOptions(options)
@@ -76,10 +78,6 @@ TopTips.setDefaultOptions = options => {
 
 TopTips.resetDefaultOptions = () => {
   TopTips.currentOptions = { ...defaultOptions }
-}
-
-TopTips.install = () => {
-  Vue.use(TopTipsComponent)
 }
 
 Vue.prototype.$toptips = TopTips

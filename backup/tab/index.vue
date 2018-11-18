@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import findParent from '../../mixins/find-parent.ts'
+import findParent from '../../mixins/find-parent'
 
 import Vue from 'vue'
 
