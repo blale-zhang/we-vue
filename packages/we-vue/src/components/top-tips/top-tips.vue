@@ -12,6 +12,8 @@
 </template>
 
 <script lang="ts">
+import '../../scss/top-tips.scss'
+
 import Vue from 'vue'
 import PopupMixin from '../../mixins/popup'
 

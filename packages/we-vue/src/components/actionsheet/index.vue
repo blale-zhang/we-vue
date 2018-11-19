@@ -64,7 +64,7 @@
 </template>
 
 <script lang="ts">
-import '@/scss/actionsheet.scss'
+import '../../scss/actionsheet.scss'
 
 import Vue from 'vue'
 

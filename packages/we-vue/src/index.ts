@@ -24,4 +24,10 @@ if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(WeVue)
 }
 
+import TopTips from './components/top-tips'
+
+export {
+  TopTips
+}
+
 export default WeVue

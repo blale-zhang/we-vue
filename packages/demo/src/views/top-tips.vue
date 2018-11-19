@@ -14,6 +14,8 @@
 <script>
 import { TopTips } from 'we-vue'
 
+console.log(TopTips)
+
 export default {
   methods: {
     openTips () {

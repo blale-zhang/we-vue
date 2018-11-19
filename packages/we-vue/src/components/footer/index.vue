@@ -12,6 +12,8 @@
 </template>
 
 <script lang="ts">
+import '../../scss/footer.scss'
+
 import FooterLink from './footer-link.vue'
 import Themeable from '../../mixins/themeable'
 
