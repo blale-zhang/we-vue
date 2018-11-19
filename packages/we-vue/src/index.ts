@@ -10,7 +10,7 @@ if (components) {
       Object.assign(component, {
         install: (Vue: VueConstructor): void => {
           // TODO
-          Vue.component('Wv' + key, component as typeof Vue)
+          Vue.component(key, component as typeof Vue)
         }
       })
     }
@@ -26,8 +26,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 import TopTips from './components/top-tips'
 
-export {
-  TopTips
-}
+export * from './components'
 
 export default WeVue
